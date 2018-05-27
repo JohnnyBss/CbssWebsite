@@ -1,0 +1,88 @@
+<div class="header">
+  <div class="newslogo"></div>
+</div>
+<div class="container" id="app">
+  <div class="newsmeau clearfix">
+    <ul>
+      <li>
+        <a href="/list?itemID=1">
+          <img src="/images/icons/new_06.png" alt="" />
+          <p>环境管理</p>
+        </a>
+      </li>
+      <li>
+        <a href="/list?itemID=2">
+          <img src="/images/icons/new_08.png" alt="" />
+          <p>服务功能</p>
+        </a>
+      </li>
+      <li>
+        <a href="/list?itemID=3">
+          <img src="/images/icons/new_10.png" alt="" />
+          <p>信息管理</p>
+        </a>
+      </li>
+      <li>
+        <a href="/list?itemID=4">
+          <img src="/images/icons/new_12.png" alt="" />
+          <p>大堂管理</p>
+        </a>
+      </li>
+      <li>
+        <a href="/list?itemID=5">
+          <img src="/images/icons/new_03.png" alt="" />
+          <p>柜面服务与效率</p>
+        </a>
+      </li>
+      <li>
+        <a href="/list?itemID=6">
+          <img src="/images/icons/new_19.png" alt="" />
+          <p>员工管理</p>
+        </a>
+      </li>
+      <li>
+        <a href="/list?itemID=7">
+          <img src="/images/icons/new_21.png" alt="" />
+          <p>服务基础管理</p>
+        </a>
+      </li>
+      <li>
+        <a href="/list?itemID=8">
+          <img src="/images/icons/new_23.png" alt="" />
+          <p>经营业绩</p>
+        </a>
+      </li>
+      <li>
+        <a href="/list?itemID=9">
+          <img src="/images/icons/new_24.png" alt="" />
+          <p>消费者权益保护与社会责任履行</p>
+        </a>
+      </li>
+      <li>
+        <a href="/list?itemID=10">
+          <img src="/images/icons/new_25.png" alt="" />
+          <p>服务文化</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="banknews">
+    <div class="newstitle">
+      <h2>网点近期新闻概要</h2>
+    </div>
+  </div>
+  <div class="banknewslist" id="banknewslist">
+    <ul>
+      <li v-for="news in newsList">
+        <a :href="news.newsUrl">
+          <img :src="news.thumbnailUrl" alt="" />
+          <p>\{{news.newsTitle}}</p>
+          <span>\{{news.newsDate}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="load more">数据加载中，请稍后...</div>
+  <div class="more"><a href="javascript:;" @click="loadMore">加载更多</a></div>
+</div>
+<script src="javascripts/home.js"></script>
