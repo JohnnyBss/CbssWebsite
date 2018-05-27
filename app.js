@@ -9,6 +9,7 @@ var homeRouter = require('./routes/home');
 var listRouter = require('./routes/list');
 var detailRouter = require('./routes/detail');
 var detailOnlyFileRouter = require('./routes/detailOnlyFile');
+var common = require('./routes/common');
 var newsRouter = require('./routes/news');
 
 var app = express();
@@ -28,6 +29,7 @@ app.use('/home', homeRouter);
 app.use('/list', listRouter);
 app.use('/detail', detailRouter);
 app.use('/detailOnlyFile', detailOnlyFileRouter);
+app.use('/common', common);
 app.use('/news', newsRouter);
 
 // catch 404 and forward to error handler

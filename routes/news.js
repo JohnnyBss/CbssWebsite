@@ -1,9 +1,31 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let commonService = require('../service/commonService');
+let sysConfig = require('../config/sysConfig');
+let router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('news', { title: '近期新闻' });
+});
+
+router.get('/detail', function(req, res, next) {
+  let service = new commonService.commonInvoke('news');
+  let newsID = req.query.newsID;
+
+  service.get(newsID, function (result) {
+    if (result.err) {
+      res.json({
+        err: true,
+        msg: result.msg
+      });
+    } else {
+      res.json({
+        err: !result.content.result,
+        msg: result.content.responseMessage,
+        dataList: result.content.responseData
+      });
+    }
+  })
 });
 
 module.exports = router;

@@ -3,19 +3,15 @@ let commonService = require('../service/commonService');
 let sysConfig = require('../config/sysConfig');
 let router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('home', { title: '主页', bodyClass: 'bg-normal'});
-});
-
-router.get('/newsList', function(req, res, next) {
-  let service = new commonService.commonInvoke('news');
-  let pageNumber = req.query.pageNumber;
-  let pageSize = sysConfig.newsPageSize;
+router.get('/itemDetail', function(req, res, next) {
+  let service = new commonService.commonInvoke('detail4Item');
   let bankID = sysConfig.bankID;
   let branchID = sysConfig.branchID;
+  let itemID = req.query.itemID;
+  let year = req.query.year;
+  let quarter = req.query.quarter;
 
-  let parameter = pageNumber + '/' + pageSize + '/' + bankID + '/' + branchID;
+  let parameter = bankID + '/' + branchID + '/' + itemID + '/' + year + '/' + quarter;
 
   service.get(parameter, function (result) {
     if (result.err) {
@@ -27,7 +23,7 @@ router.get('/newsList', function(req, res, next) {
       res.json({
         err: !result.content.result,
         msg: result.content.responseMessage,
-        dataList: result.content.responseData
+        data: result.content.responseData
       });
     }
   })
