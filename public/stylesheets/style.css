@@ -309,7 +309,12 @@ img {
 .banknewslist li p {
   padding: 10px;
   color: #111;
+  height: 33px;
   font-weight: bold;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .banknewslist li span {
@@ -318,13 +323,14 @@ img {
   font-weight: bold;
   color: #666;
   padding-right: 15px;
+  margin-top: 3px;
 }
 
 
 /*环境管理*/
 
 .EnvironmentalBg {
-  background: url(../images/bg1.jpg) no-repeat top center;
+  background: url(../images/icons/bg1.jpg) no-repeat top center;
   background-size: 100% 100%;
 }
 
@@ -364,7 +370,7 @@ img {
 }
 
 .search input {
-  background: url(../images/search.jpg) no-repeat right center;
+  background: url(../images/icons/search.jpg) no-repeat right center;
   background-size: 27px 24px;
   border: none;
   width: 90%;
@@ -397,9 +403,12 @@ img {
 
 .tabs-vertical .tabs-ul li a {
   display: block;
-  font-size: 18px;
+  font-size: 16px;
+  width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: #fff;
-  padding-left: 56px;
+  padding-left: 22px;
 }
 
 .tabs-vertical .tabs-ul li a.tab-active {
@@ -426,7 +435,7 @@ img {
 .menuTree h3{ padding-left: 15px !important;}
 .tab-content h3 .add,
 .tab-content h3 .sub {
-  background: url(../images/add.png) no-repeat;
+  background: url(../images/icons/add.png) no-repeat;
   background-size: 20px 20px;
   position: absolute;
   right: 20px;
@@ -437,7 +446,7 @@ img {
 }
 
 .tab-content h3 .sub {
-  background: url(../images/sub.png) no-repeat;
+  background: url(../images/icons/sub.png) no-repeat;
   background-size: 20px 20px;
 }
 
@@ -446,7 +455,12 @@ img {
   line-height: 30px;
   padding-left: 15px !important;
 }
-
+.sys-title{
+  font-size: 28px;
+  font-family: "微软雅黑";
+  font-weight:bold;;
+  color: #ffffff;
+}
 
 /* The content */
 
@@ -607,7 +621,7 @@ img {
 /*l图片展示*/
 
 .EnvironmentalBg {
-  background: url(../images/bg2.jpg) no-repeat top center;
+  background: url(../images/icons/bg2.jpg) no-repeat top center;
 }
 
 
@@ -617,18 +631,108 @@ img {
   background: rgba(0, 0, 0, 0.7);
   padding: 25px 10px 0;
   box-shadow: 1px 0 6px 0 rgba(180, 180, 180, 0.4);
-  margin: 0 auto;
+  /*margin: 0 auto;*/
 }
 
 
-/*.imgContainerBg{
-	 
-	 position: absolute;
-	 top:0;
-	 left: 0;
-	 z-index: 1;
-	 width: 100%;
-}*/
+.banner {
+  overflow: hidden;
+}
+
+.large_box {
+  margin-bottom: 10px;
+  position: relative;
+  margin: 0 auto;
+  height: 350px;
+  width: 90%;
+  text-align:center;
+  overflow: hidden;
+}
+.large_box ul{
+  width: 85%;
+  margin: 0 auto;
+}
+
+.large_box .left_btn,
+.large_box .right_btn{
+  background: url(../images/icons/page_button.png) no-repeat;
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 100px;
+  cursor: pointer;
+}
+.large_box .left_btn{
+  background-position: 0 0;
+  left: 0;
+}
+.large_box .right_btn{
+  background-position: -55px 0;
+  right: 0;
+}
+.large_box img {
+  display: block;
+  width: 917px;
+  height: 350px;
+}
+
+.small_list {
+  position: relative;
+  margin: 0 auto;
+  width: 82%;
+  height: 93px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.small_list ul {
+  height: 73px;
+  overflow: hidden;
+}
+
+.small_list ul li {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  width: 173px;
+}
+
+.small_list ul li img {
+  display: block;
+  width: 177px;
+  height: 72px;
+}
+
+.small_list ul li .bun_bg {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 173px;
+  height: 73px;
+  background: #000;
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.6;
+  -khtml-opacity: 0.6;
+  opacity: 0.6;
+}
+
+.small_list ul li.on .bun_bg {
+  display: block;
+}
+
+.btn:hover {
+}
+
+.left_btn {
+  left: 10px;
+  background-position: 0 0;
+}
+
+.right_btn {
+  right: 10px;
+  background-position: -103px 0;
+}
 
 .box ul {
   width: 90%;
@@ -685,7 +789,7 @@ img {
   width: 46px;
   height: 98px;
   top: 50%;
-  background: url(../images/page_button.png) 0 0 no-repeat;
+  background: url(../images/icons/page_button.png) 0 0 no-repeat;
   background-size: 58px 77px;
   cursor: pointer;
   text-indent: -9999px;
@@ -748,7 +852,7 @@ img {
   height: 44px;
   width: 21px;
   margin: 0;
-  background: url(../images/album-arrow.png) no-repeat 5px 9px;
+  background: url(../images/icons/album-arrow.png) no-repeat 5px 9px;
   background-size:64px 80px;
   cursor: pointer;
 }
@@ -797,7 +901,7 @@ img {
   font-size: 16px;
   font-weight: bold;
   padding-left: 18px;
-  background: url(../images/ic2.png) no-repeat top left;
+  background: url(../images/icons/ic2.png) no-repeat top left;
 }
 
 .attachment li {
@@ -806,7 +910,7 @@ img {
 }
 
 .attachment li {
-  background: url(../images/icon2.png) no-repeat left center;
+  background: url(../images/icons/icon2.png) no-repeat left center;
   padding-left: 35px;
   float: left;
   margin-right: 30px;
@@ -817,7 +921,7 @@ img {
 }
 
 .attachmentWarm {
-  background: url(../images/fy2.jpg) no-repeat left top;
+  background: url(../images/icons/fy2.jpg) no-repeat left top;
   height: 103px;
   padding: 50px 30px 0;
 }
@@ -847,7 +951,7 @@ img {
 /*新闻详细*/
 
 .newshead {
-  background: url(../images/news.jpg) no-repeat top center;
+  background: url(../images/icons/news.jpg) no-repeat top center;
   height: 216px;
 }
 
@@ -877,12 +981,18 @@ img {
 }
 
 .newscont p {
-  text-indent: 2em;
+  /*text-indent: 2em;*/
   line-height: 24px;
   padding-bottom: 20px;
   color: #333;
 }
-
+.news-content{
+  width: 600px;
+  margin: 15px auto;
+}
+.news-content img{
+  width: 600px;
+}
 .load {
   display: none;
 }
@@ -911,4 +1021,10 @@ img {
 }
 .bg-normal{
   background-color: #ececec;
+}
+.news-date{
+  text-align: center;
+  /*text-indent: 2em;*/
+  margin-bottom: 5px;
+  color: #928f8f;
 }

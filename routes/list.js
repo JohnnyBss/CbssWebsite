@@ -5,7 +5,7 @@ let router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('list', { title: '考评点列表' });
+  res.render('list', { title: '考评点列表', itemID: req.query.itemID });
 });
 
 router.get('/item', function(req, res, next) {

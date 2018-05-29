@@ -1,11 +1,11 @@
 let express = require('express');
 let commonService = require('../service/commonService');
-let sysConfig = require('../config/sysConfig');
 let router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('news', { title: '近期新闻' });
+  let newsID = req.query.newsID;
+  res.render('news', { title: '近期新闻', newsID: newsID });
 });
 
 router.get('/detail', function(req, res, next) {
@@ -22,7 +22,7 @@ router.get('/detail', function(req, res, next) {
       res.json({
         err: !result.content.result,
         msg: result.content.responseMessage,
-        dataList: result.content.responseData
+        data: result.content.responseData
       });
     }
   })
