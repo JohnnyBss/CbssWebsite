@@ -4,6 +4,7 @@
     "port": 8080,
     "path": {
       "item": "/api/item",
+      "itemByID": "/api/item/current",
       "detail": "/api/detail",
       "detail4Item": "/api/detail/item",
       "detail4ImageMemo": "/api/detail/imageMemo",

@@ -2,31 +2,21 @@
 </div>
 <div class="content">
   <div class="title">
-    <h2><img src="../../images/icons/icon.png" alt="" />环境管理 > 室内环境维护 > 01</h2>
+    <h2>
+      <img src="../../images/icons/icon.png" alt="" />
+      <span class="page-title"></span>
+    </h2>
   </div>
   <div class="imgContainer clearfix">
     <div class="banner">
       <div class="large_box">
         <span class="left_btn"></span>
         <ul>
-          <li>
-            <img src="../../images/icons/imgD.jpg">
-          </li>
-          <li>
-            <img src="../../images/icons//imgD.jpg">
-          </li>
-          <li>
-            <img src="../../images/icons//imgD.jpg">
-          </li>
-          <li>
-            <img src="../../images/icons//imgD.jpg">
-          </li>
-          <li>
-            <img src="../../images/icons//imgD.jpg">
-          </li>
-          <li>
-            <img src="../../images/icons//imgD.jpg">
-          </li>
+          {{#each imageList}}
+            <li>
+              <img src="{{this.imageUrl}}" data-detail-id="{{this.detailID}}">
+            </li>
+          {{/each}}
         </ul>
         <span class="right_btn"></span>
       </div>
@@ -34,30 +24,12 @@
         <span class="btn left_btn"></span>
         <div class="small_list">
           <ul>
-            <li class="on">
-              <img src="../../images/icons//imgS.jpg">
-              <div class="bun_bg"></div>
-            </li>
-            <li>
-              <img src="../../images/icons//imgS.jpg">
-              <div class="bun_bg"></div>
-            </li>
-            <li>
-              <img src="../../images/icons//imgS.jpg">
-              <div class="bun_bg"></div>
-            </li>
-            <li>
-              <img src="../../images/icons//imgS.jpg">
-              <div class="bun_bg"></div>
-            </li>
-            <li>
-              <img src="../../images/icons//imgS.jpg" width="110" height="73">
-              <div class="bun_bg"></div>
-            </li>
-            <li>
-              <img src="../../images/icons//imgS.jpg" width="110" height="73">
-              <div class="bun_bg"></div>
-            </li>
+            {{#each imageList}}
+              <li>
+                <img src="{{this.imageUrl}}" data-detail-id="{{this.detailID}}">
+                <div class="bun_bg"></div>
+              </li>
+            {{/each}}
           </ul>
         </div>
         <span class="btn right_btn"></span>
@@ -65,28 +37,16 @@
     </div>
 
     <div class="Text_introduce">
-      <h2>营业大厅环境</h2>
-      <p>请您于此处添加具体环境的详情介绍文字请您于此处添加具体环境的详情介绍文字请您于此处添加具体环境的详情介绍文字请您于此处添加具体环境的详情介绍文字请您于此处添加具体环境的详情介绍文字请您于此处添加具体环境的详情介绍文字请您于此处添加具体环境的详情</p>
+      <p></p>
     </div>
     <div class="attachment">
       <h2>附件</h2>
       <ul class="clearfix">
-        <li>
-          <a href="#">上传后的文件.PDF</a>
-        </li>
-        <li>
-          <a href="#">上传后的文件.PDF</a>
-        </li>
-        <li>
-          <a href="#">上传后的文件.PDF</a>
-        </li>
-        <li>
-          <a href="#">上传后的文件.PDF</a>
-        </li>
-        <li>
-          <a href="#">上传后的文件.PDF</a>
-        </li>
-
+        {{#each fileList}}
+          <li>
+            <a href="{{this.fileUrl}}" target="_blank">{{this.fileName}}</a>
+          </li>
+        {{/each}}
       </ul>
     </div>
   </div>
@@ -94,14 +54,8 @@
 <div class="copyright">
   交通银行渭南分行 服务档案
 </div>
-<script type="text/javascript">
-  $(function(){
-    /* 商品轮播图（带缩略图的轮播效果） */
-    $(".banner").thumbnailImg({
-      large_elem: ".large_box",
-      small_elem: ".small_list",
-      left_btn: ".left_btn",
-      right_btn: ".right_btn"
-    });
-  });
-</script>
+<input type="hidden" value="{{itemID}}" id="hidden-itemID">
+<input type="hidden" value="{{itemName}}" id="hidden-itemName">
+<input type="hidden" value="{{year}}" id="hidden-year">
+<input type="hidden" value="{{quarter}}" id="hidden-quarter">
+<script src="javascripts/detail.js"></script>

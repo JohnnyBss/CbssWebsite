@@ -32,4 +32,28 @@ router.get('/item', function(req, res, next) {
   })
 });
 
+router.get('/itemByID', function(req, res, next) {
+  let service = new commonService.commonInvoke('itemByID');
+  let bankID = sysConfig.bankID;
+  let branchID = sysConfig.branchID;
+  let itemID = req.query.itemID;
+
+  let parameter = bankID + '/' + branchID + '/' + itemID;
+
+  service.get(parameter, function (result) {
+    if (result.err) {
+      res.json({
+        err: true,
+        msg: result.msg
+      });
+    } else {
+      res.json({
+        err: !result.content.result,
+        msg: result.content.responseMessage,
+        data: result.content.responseData
+      });
+    }
+  })
+});
+
 module.exports = router;

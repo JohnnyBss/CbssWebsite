@@ -672,16 +672,17 @@ img {
 }
 .large_box img {
   display: block;
-  width: 917px;
+  width: 623px;
   height: 350px;
+  margin: 0 auto;
 }
 
 .small_list {
   position: relative;
-  margin: 0 auto;
-  width: 82%;
+  /*width: 82%;*/
+  width: 970px;
   height: 93px;
-  margin-top: 10px;
+  margin: 20px auto 0;
   overflow: hidden;
 }
 
@@ -693,14 +694,16 @@ img {
 .small_list ul li {
   position: relative;
   float: left;
-  margin-right: 10px;
-  width: 173px;
+  /*margin-right: 10px;*/
+  width: 194px;
 }
 
 .small_list ul li img {
   display: block;
-  width: 177px;
-  height: 72px;
+  width: 188px;
+  height: 106px;
+  /*width: 177px;*/
+  /*height: 72px;*/
 }
 
 .small_list ul li .bun_bg {
@@ -708,8 +711,8 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 173px;
-  height: 73px;
+  width: 188px;
+  height: 106px;
   background: #000;
   filter: alpha(opacity=60);
   -moz-opacity: 0.6;
@@ -875,7 +878,9 @@ img {
 }
 
 .Text_introduce {
-  padding: 20px;
+  padding: 8px;
+  width: 970px;
+  margin: 0 auto;
 }
 
 .Text_introduce h2 {
@@ -888,7 +893,7 @@ img {
 .Text_introduce p {
   color: #fff;
   line-height: 28px;
-  text-indent: 2em;
+  /*text-indent: 2em;*/
 }
 
 .attachment {
@@ -922,8 +927,8 @@ img {
 
 .attachmentWarm {
   background: url(../images/icons/fy2.jpg) no-repeat left top;
-  height: 103px;
-  padding: 50px 30px 0;
+  height: 43px;
+  padding: 30px;
 }
 
 .attachmentWarm img {
