@@ -7,6 +7,7 @@
       "itemByID": "/api/item/current",
       "detail": "/api/detail",
       "detail4Item": "/api/detail/item",
+      "detail4File": "/api/detail/file",
       "detail4ImageMemo": "/api/detail/imageMemo",
       "news": "/api/news",
       "user": "/api/user",

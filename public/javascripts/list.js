@@ -78,6 +78,100 @@ let _item = [
 
 $(function() {
   let items = [];
+
+  $("#fileName").keydown(function (e) {
+    //38 上 40 下 13回车
+
+    switch (e.keyCode){
+      case 13:
+        enter();
+        break;
+      case 38:
+        up();
+        break;
+      case 40:
+        down();
+        break;
+    }
+  });
+
+  function up(){
+    $('.sey-list').focus();
+    let resultCount = $('.sey-list').find('li').length;
+    if(resultCount === 0){
+      return false;
+    }
+
+    let currentIndex = $('.sey-list').find('li.sey-selected').index();
+    if(currentIndex === -1){
+      currentIndex = resultCount - 1;
+    }else if(currentIndex <= 0){
+      currentIndex = resultCount - 1;
+    }else{
+      currentIndex--;
+    }
+    $('.sey-list').find('li').removeClass('sey-selected');
+    $('.sey-list').find('li').eq(currentIndex).addClass('sey-selected');
+    e.stopPropagation();
+  }
+
+  function down(){
+    $('.sey-list').focus();
+    let resultCount = $('.sey-list').find('li').length;
+    if(resultCount === 0){
+      return false;
+    }
+
+    let currentIndex = $('.sey-list').find('li.sey-selected').index();
+    if(currentIndex === -1){
+      currentIndex = 0;
+    }else if(currentIndex >= resultCount - 1){
+      currentIndex = 0;
+    }else{
+      currentIndex++;
+    }
+    $('.sey-list').find('li').removeClass('sey-selected');
+    $('.sey-list').find('li').eq(currentIndex).addClass('sey-selected');
+    e.stopPropagation();
+  }
+
+  function enter(){
+    let resultCount = $('.sey-list').find('li').length;
+    let currentIndex = $('.sey-list').find('li.sey-selected').index();
+    if(resultCount === 0 || currentIndex === -1){
+      return false;
+    }
+    let fileUrl = $('.sey-list').find('li.sey-selected').find('a').attr('href');
+    window.open(fileUrl);
+    e.stopPropagation();
+  }
+
+  $("#fileName").bind("input propertychange", function () {
+    let fileName = $.trim($("#fileName").val());
+    if(fileName.length === 0){
+      return false;
+    }
+    $.ajax({
+      url: '/list/file?fileName=' + fileName,
+      type: 'get',
+      async: false,
+      success: function(res){
+        if(res.err){
+          layer.msg(res.msg);
+          return false;
+        }
+        $('.sey-list').empty();
+        $.each(res.dataList, function (index, data) {
+          let file = data.content.substr(data.content.lastIndexOf('/') + 1);
+          $('.sey-list').append('<li class="sey-item"><a href="' + data.content + '" target="_blank">' + file + '</a></li>');
+        });
+      },
+      error: function(XMLHttpRequest){
+        layer.msg('远程服务无响应，状态码：' + XMLHttpRequest.status);
+      }
+    });
+  });
+
   $(".select p").click(function(e) {
     $(this).parent().toggleClass('open');
     e.stopPropagation();
@@ -93,6 +187,7 @@ $(function() {
 
   $(document).on('click', function() {
     $(".select").removeClass("open");
+    $('.sey-list').empty();
   });
 
   /* make tree */
