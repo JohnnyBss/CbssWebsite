@@ -9,6 +9,8 @@
     <div v-for="news in newsContentList" class="news-content">
       <p v-if="news.newsContentType === 'T'">\{{news.newsContent}}</p>
       <img v-if="news.newsContentType === 'I'" :src="news.newsContent" alt="">
+      <video v-if="news.newsContentType === 'V'" :src="news.newsContent" controls="controls">
+        您使用的浏览器不支持视频播放，请使用Chrome浏览器。  </video>
     </div>
   </div>
 </div>

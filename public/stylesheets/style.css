@@ -383,9 +383,8 @@ img {
   background-color: #206ae0;
   border-radius: 2px;
   overflow: hidden;
-  height: 500px;
+  /*height: 500px;*/
 }
-
 
 /* The tabs */
 
@@ -917,7 +916,7 @@ img {
 .attachment li {
   background: url(../images/icons/icon2.png) no-repeat left center;
   padding-left: 35px;
-  float: left;
+  /*float: left;*/
   margin-right: 30px;
 }
 
@@ -998,6 +997,10 @@ img {
 .news-content img{
   width: 600px;
 }
+.news-content video {
+  width: 600px;
+}
+
 .load {
   display: none;
 }
@@ -1032,4 +1035,11 @@ img {
   /*text-indent: 2em;*/
   margin-bottom: 5px;
   color: #928f8f;
+}
+.image-title{
+  width: 80px;
+}
+.detail-video{
+  width: 623px;
+  height: 350px;
 }

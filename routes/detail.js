@@ -36,7 +36,16 @@ router.get('/', function(req, res, next) {
         if(data.contentType === 'I'){
           imageList.push({
             detailID: data.detailID,
-            imageUrl: data.content
+            imageUrl: data.content,
+            isVideo: false
+          });
+        }
+        if(data.contentType === 'V'){
+          imageList.push({
+            detailID: data.detailID,
+            videoUrl: data.content,
+            imageUrl: '/images/icons/video.jpeg',
+            isVideo: true
           });
         }
         if(data.contentType === 'F'){
