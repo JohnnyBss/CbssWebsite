@@ -283,6 +283,7 @@ img {
   position: relative;
   top: -30px;
   overflow: hidden;
+  width: 1100px;
 }
 
 .banknewslist ul {
@@ -293,17 +294,22 @@ img {
 .banknewslist li {
   background: #fff;
   box-shadow: 2px 2px 4px rgba(34, 23, 20, 0.1);
-  width: 310px;
+  width: 325px;
+  height: 310px;
+  margin-top: 15px;
+  margin-right: 15px;
   padding-bottom: 10px;
   float: left;
 }
 
 .banknewslist img {
-  width: 310px;
+  width: 325px;
+  height: 216px;
 }
 
-.banknewslist li:nth-child(2) {
-  margin: 0 35px;
+.banknewslist li:nth-child(3) {
+  /*margin-right: 8px;*/
+  margin-right: 0;
 }
 
 .banknewslist li p {
