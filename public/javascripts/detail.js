@@ -1,60 +1,47 @@
 $(function(){
-  let itemMap = [];
+
   function initPage() {
-    imageDes();
     setPageTitle();
   }
 
   function setPageTitle() {
     let itemID = $('#hidden-itemID').val();
-    let year = $('#hidden-year').val();
-    let quarter = $('#hidden-quarter').val();
     let itemName = $('#hidden-itemName').val();
-    let map = itemName + ' > ' + year + '年' + '第' + quarter + '季度';
-    $('.page-title').text(map);
+    $('.page-title').text(itemName);
   }
 
-  function getItems(parentID) {
-    $.ajax({
-      url: '/list/itemByID?itemID=' + parentID,
-      type: 'get',
-      async: false,
-      success: function(res){
-        if(res.err){
-          layer.msg(res.msg);
-          return false;
-        }
-        itemMap.push(res.data.itemName);
-      },
-      error: function(XMLHttpRequest){
-        layer.msg('远程服务无响应，状态码：' + XMLHttpRequest.status);
-      }
-    });
-  }
+  $('.detail-switch ul li').click(function () {
+    let target = $(this).attr('data-target');
+    $('.detail-switch ul li').removeClass('detail-switch-select');
+    $('#'+$(this).attr('id')).addClass('detail-switch-select');
 
-  function imageDes(){
-    let itemID = $('#hidden-itemID').val();
-    let detailID = $('div.small_list').find('ul').find('li').eq(0).find('img').attr('data-detail-id');
-    $.ajax({
-      url: '/detail/imageMemo?itemID=' + itemID + '&textMapDetail=' + detailID,
-      type: 'get',
-      success: function (res) {
-        if(res.err){
-          return false;
-        }
-        $('div.Text_introduce').find('p').text(res.data.content);
-      },
-      error: function(XMLHttpRequest){
-
-      }
-    });
-  }
-  /* 商品轮播图（带缩略图的轮播效果） */
-  $(".banner").thumbnailImg({
-    large_elem: ".large_box",
-    small_elem: ".small_list",
-    left_btn: ".left_btn",
-    right_btn: ".right_btn"
+    $('.imgContainer .banner').addClass('hidden');
+    $('.' + target).removeClass('hidden')
   });
+
+
+  /* 商品轮播图（带缩略图的轮播效果） */
+  // $(".banner").thumbnailImg({
+  //   large_elem: ".large_box_video",
+  //   small_elem: ".small_list_video",
+  //   left_btn: ".left_btn_video",
+  //   right_btn: ".right_btn_video"
+  // });
+
+  $(".banner-video").thumbnailImg({
+    large_elem: ".banner-video .large_box",
+    small_elem: ".banner-video .small_list",
+    left_btn: ".banner-video .left_btn",
+    right_btn: ".banner-video .right_btn"
+  });
+
+  $(".banner-image").thumbnailImg({
+    large_elem: ".banner-image .large_box",
+    small_elem: ".banner-image .small_list",
+    left_btn: ".banner-image .left_btn",
+    right_btn: ".banner-image .right_btn"
+  });
+
+
   initPage();
 });

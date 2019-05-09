@@ -3,16 +3,11 @@ let commonService = require('../service/commonService');
 let sysConfig = require('../config/sysConfig');
 let router = express.Router();
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
   let service = new commonService.commonInvoke('detail4Item');
-  let bankID = sysConfig.bankID;
-  let branchID = sysConfig.branchID;
   let itemID = req.query.itemID;
-  let year = req.query.year;
-  let quarter = req.query.quarter;
-
-  let parameter = bankID + '/' + branchID + '/' + itemID + '/' + year + '/' + quarter;
+  let itemName = req.query.itemName;
+  let parameter = '/' + sysConfig.bankID + '/' + sysConfig.branchID + '/' + itemID;
 
   service.get(parameter, function (result) {
     if(result.err || !result.content.result){
@@ -26,26 +21,31 @@ router.get('/', function(req, res, next) {
         }
       }
 
+      let videoList = [];
       let imageList = [];
+      let textList = [];
       let fileList = [];
-      let itemName = '';
       if(result.content.responseData.length > 0){
         itemName = result.content.responseData[0].itemVO.itemName;
       }
       result.content.responseData.forEach(function(data,index){
+        if(data.contentType === 'T'){
+          textList.push({
+            detailID: data.detailID,
+            content: data.content
+          });
+        }
         if(data.contentType === 'I'){
           imageList.push({
             detailID: data.detailID,
-            imageUrl: data.content,
-            isVideo: false
+            imageUrl: data.content
           });
         }
         if(data.contentType === 'V'){
-          imageList.push({
+          videoList.push({
             detailID: data.detailID,
             videoUrl: data.content,
-            imageUrl: '/images/icons/video.jpeg',
-            isVideo: true
+            imageUrl: '/images/icons/video.jpeg'
           });
         }
         if(data.contentType === 'F'){
@@ -61,19 +61,17 @@ router.get('/', function(req, res, next) {
           title: '考评点明细',
           fileList:fileList,
           itemID: itemID,
-          itemName: itemName,
-          year: year,
-          quarter: quarter
+          itemName: itemName
         });
       }else{
         res.render('detail', {
           title: '考评点明细',
+          textList: textList,
+          videoList: videoList,
           imageList: imageList,
           fileList:fileList,
           itemID: itemID,
-          itemName: itemName,
-          year: year,
-          quarter: quarter
+          itemName: itemName
         });
       }
     }
