@@ -2,7 +2,6 @@ let express = require('express');
 let commonService = require('../service/commonService');
 let router = express.Router();
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
   let newsID = req.query.newsID;
   res.render('news', { title: '近期新闻', newsID: newsID });

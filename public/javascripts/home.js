@@ -139,6 +139,10 @@ $(document).ready(function () {
     });
   });
 
+  $('.btn-more-news').click(function () {
+    window.open('/newsList');
+  });
+
 
   loadNewsList();
 });
