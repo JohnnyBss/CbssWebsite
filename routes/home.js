@@ -3,9 +3,8 @@ let commonService = require('../service/commonService');
 let sysConfig = require('../config/sysConfig');
 let router = express.Router();
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home', { title: '主页', bodyClass: 'bg-normal'});
+  res.render('home', {title: '主页', bodyClass: 'bg-normal'});
 });
 
 router.get('/newsList', function(req, res, next) {

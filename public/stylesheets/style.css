@@ -13,9 +13,9 @@ li,
 p,
 div,
 a,
-h1,
-h2,
-h3,
+/*h1,*/
+/*h2,*/
+/*h3,*/
 h4,
 h5,
 h6 {
@@ -107,9 +107,10 @@ img {
   top: 0;
   z-index: -1;
   width: 100%;
-  background: -moz-linear-gradient(45deg, #00367a, #761496);
-  background: -webkit-linear-gradient(45deg, #00367a, #761496);
-  background: -o-linear-gradient(45deg, #00367a, #761496);
+  background: url("../images/home-bg-5.png") no-repeat;
+  /*background: -moz-linear-gradient(45deg, #00367a, #761496);*/
+  /*background: -webkit-linear-gradient(45deg, #00367a, #761496);*/
+  /*background: -o-linear-gradient(45deg, #00367a, #761496);*/
 }
 
 .logo {
@@ -336,21 +337,21 @@ img {
 /*环境管理*/
 
 .EnvironmentalBg {
-  background: url(../images/icons/bg1.jpg) no-repeat top center;
+  /*background: url(../images/icons/bg1.jpg) no-repeat top center;*/
   background-size: 100% 100%;
 }
 
 .content {
-  width: 1203px;
+  width: 1000px;
   margin: 0 auto;
 }
 
 .title h2 {
   font-weight: bold;
   font-size: 26px;
-  color: #fff;
   text-align: center;
   padding: 20px 0;
+  color: #1656bf;
 }
 
 .title h2 img {
@@ -409,11 +410,12 @@ img {
 .tabs-vertical .tabs-ul li a {
   display: block;
   font-size: 16px;
-  width: 240px;
+  /*width: 240px;*/
   overflow: hidden;
   text-overflow: ellipsis;
   color: #fff;
   padding-left: 22px;
+  text-decoration:none;
 }
 
 .tabs-vertical .tabs-ul li a.tab-active {
@@ -626,7 +628,8 @@ img {
 /*l图片展示*/
 
 .EnvironmentalBg {
-  background: url(../images/icons/bg2.jpg) no-repeat top center;
+  background: url(../images/home-bg-5.png) no-repeat top center;
+  background-size: 100% 100%;
 }
 
 

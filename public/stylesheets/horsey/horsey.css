@@ -28,3 +28,6 @@
   background-color: #6594df;
   color: #fbfbfb;
 }
+.sey-list li a{
+  text-decoration: none;
+}
