@@ -107,10 +107,7 @@ img {
   top: 0;
   z-index: -1;
   width: 100%;
-  background: url("../images/home-bg-5.png") no-repeat;
-  /*background: -moz-linear-gradient(45deg, #00367a, #761496);*/
-  /*background: -webkit-linear-gradient(45deg, #00367a, #761496);*/
-  /*background: -o-linear-gradient(45deg, #00367a, #761496);*/
+  background: url("../images/backimg.jpeg") no-repeat;
 }
 
 .logo {
@@ -128,7 +125,7 @@ img {
 .guidepage {
   margin: 0 auto;
   width: 400px;
-  margin-top: 10%;
+  margin-top: 5%;
   text-align: center;
 }
 
@@ -153,9 +150,16 @@ img {
 
 .guidepage a {
   display: block;
-  position: relative;
-  left: 10%;
-  top: 80px;
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #6bbed3;
+  text-decoration: none;
+  color: #ffffff;
+  margin-top: 35px;
+  /*position: relative;*/
+  /*left: 10%;*/
+  /*top: 80px;*/
 }
 
 
@@ -336,10 +340,11 @@ img {
 
 /*环境管理*/
 
-.EnvironmentalBg {
-  /*background: url(../images/icons/bg1.jpg) no-repeat top center;*/
-  background-size: 100% 100%;
-}
+/*.EnvironmentalBg {*/
+  /*!*background: url('../images/backimg.jpg') no-repeat top center;*!*/
+  /*background: url("../images/backimg.jpg") no-repeat;*/
+  /*background-size: 100% 100%;*/
+/*}*/
 
 .content {
   width: 1000px;
@@ -351,7 +356,7 @@ img {
   font-size: 26px;
   text-align: center;
   padding: 20px 0;
-  color: #1656bf;
+  color: #5ebbcd;
 }
 
 .title h2 img {
@@ -360,7 +365,7 @@ img {
 }
 
 .Eyear {
-  background: #07347c;
+  background: #5ebbcd;
   height:75px;
   position: relative;
 }
@@ -387,7 +392,7 @@ img {
 }
 
 .tabs-vertical {
-  background-color: #206ae0;
+  background-color: #5ebbcd;
   border-radius: 2px;
   overflow: hidden;
   /*height: 500px;*/
@@ -420,7 +425,7 @@ img {
 
 .tabs-vertical .tabs-ul li a.tab-active {
   background: #fff;
-  color: #07347c;
+  color: #26b179;
 }
 
 .tabs-vertical .tabs-ul li:first-child a {
@@ -466,9 +471,11 @@ img {
   font-size: 28px;
   font-family: "微软雅黑";
   font-weight:bold;;
-  color: #ffffff;
+  color: #69bbc7;
 }
+.enter-sys{
 
+}
 /* The content */
 
 .tabs-vertical .tabs-content-placeholder {
@@ -627,10 +634,11 @@ img {
 
 /*l图片展示*/
 
-.EnvironmentalBg {
-  background: url(../images/home-bg-5.png) no-repeat top center;
-  background-size: 100% 100%;
-}
+/*.EnvironmentalBg {*/
+  /*!*background: url(../images/home-bg-5.png) no-repeat top center;*!*/
+  /*background: url("../images/backimg.jpg") no-repeat;*/
+  /*background-size: 100% 100%;*/
+/*}*/
 
 
 /*main*/

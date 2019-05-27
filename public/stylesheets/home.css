@@ -3,16 +3,31 @@ body{
 }
 
 .back-img{
-  background: url("../images/home-bg-5.png") no-repeat;
+  /*height: 100%;*/
+  /*left: 0;*/
+  /*top: 0;*/
+  /*z-index: -1;*/
+  /*width: 100%;*/
+  background: url("../images/backimg.jpeg") no-repeat;
 }
 
 .home-logo {
   width: 250px;
-  margin: 25px auto 0;
+  margin: 35px auto 0;
 }
 .home-logo img{
   margin: 0 auto;
-  width: 250px;
+  /*width: 250px;*/
+  width: 100%;
+}
+.branch-logo{
+  width: 140px;
+  margin: 155px auto 0;
+}
+.branch-logo img{
+  margin: 0 auto;
+  /*width: 250px;*/
+  width: 100%;
 }
 .home-content{
   width: 800px;
@@ -75,7 +90,7 @@ body{
   margin-top: 20px;
 }
 .module li img{
-  width: 85px;
+  width: 89px;
 }
 .content-news-item{
   padding-top: 10px;
@@ -113,7 +128,7 @@ body{
 }
 
 .content-news{
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 8px;
   border-left: 4px solid #00387a;
   background-color: #ffffff;
