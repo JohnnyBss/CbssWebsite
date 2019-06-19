@@ -8,6 +8,7 @@ body{
   /*top: 0;*/
   /*z-index: -1;*/
   /*width: 100%;*/
+  border-left: 7px solid #5dbfd3;
   background: url("../images/backimg.jpeg") no-repeat;
 }
 
